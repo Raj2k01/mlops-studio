@@ -11,7 +11,7 @@ MODEL_FILE = MODEL_DIR / "xgboost_model.pkl"
 OUTPUT_DIR = PROJECT_ROOT / "outputs"
 
 # Random Seed
-RANDOM_STATE = 42
+RANDOM_STATE = 45
 
 # Target Column
 TARGET_COLUMN = "quality"
