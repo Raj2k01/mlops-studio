@@ -5,8 +5,6 @@ from sklearn.preprocessing import LabelEncoder
 from config import RAW_DATA, RANDOM_STATE, TARGET_COLUMN, TEST_SIZE
 
 
-
-
 def load_data():
 
     df = pd.read_csv(RAW_DATA)

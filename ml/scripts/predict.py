@@ -1,15 +1,24 @@
+import json
 import joblib
 import pandas as pd
 
-from config import MODEL_FILE
+from config import (
+    MODEL_FILE,
+    INPUT_FILE,
+    OUTPUT_FILE
+)
+
 
 def load_model():
+    return joblib.load(MODEL_FILE)
 
-    model = joblib.load(MODEL_FILE)
 
-    return model
+def load_input():
+    with open(INPUT_FILE, "r") as file:
+        return json.load(file)
 
-def predict_quality(model, input_data):
+
+def predict(model, input_data):
 
     input_df = pd.DataFrame([input_data])
 
@@ -17,30 +26,28 @@ def predict_quality(model, input_data):
 
     return int(prediction[0])
 
+
+def save_output(prediction):
+
+    result = {
+        "prediction": prediction
+    }
+
+    with open(OUTPUT_FILE, "w") as file:
+        json.dump(result, file, indent=4)
+
+
 def main():
 
     model = load_model()
 
-    sample = {
-        "fixed acidity": 7.4,
-        "volatile acidity": 0.70,
-        "citric acid": 0.00,
-        "residual sugar": 1.9,
-        "chlorides": 0.076,
-        "free sulfur dioxide": 11,
-        "total sulfur dioxide": 34,
-        "density": 0.9978,
-        "pH": 3.51,
-        "sulphates": 0.56,
-        "alcohol": 9.4
-    }
+    input_data = load_input()
 
-    prediction = predict_quality(
-        model,
-        sample
-    )
+    prediction = predict(model, input_data)
 
-    print(f"Predicted Wine Quality: {prediction}")
+    save_output(prediction)
+
+    print(f"Prediction saved to {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":

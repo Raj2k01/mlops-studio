@@ -9,6 +9,10 @@ PROCESSED_DATA = PROJECT_ROOT / "data" / "processed"
 MODEL_DIR = PROJECT_ROOT / "models"
 MODEL_FILE = MODEL_DIR / "xgboost_model.pkl"
 
+# Prediction Input/Output Files
+INPUT_FILE = PROJECT_ROOT / "data" / "prediction_input.json"
+OUTPUT_FILE = PROJECT_ROOT / "data" / "prediction_output.json"
+
 # Outputs
 OUTPUT_DIR = PROJECT_ROOT / "outputs"
 
@@ -25,3 +29,4 @@ TEST_SIZE = 0.2
 N_ESTIMATORS = 100
 MAX_DEPTH = 6
 LEARNING_RATE = 0.1
+
