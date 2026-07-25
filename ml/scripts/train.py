@@ -30,6 +30,11 @@ from visualize import (
     plot_feature_importance,
 )
 
+from explain import (
+    generate_shap_summary,
+    generate_shap_bar,
+)
+
 def build_model():
 
     model = XGBClassifier(
@@ -99,6 +104,16 @@ def main():
     )
 
     plot_feature_importance(model)
+
+    generate_shap_summary(
+    model,
+    X_train
+)
+
+    generate_shap_bar(
+    model,
+    X_train
+    )
 
     save_model(model)
 
