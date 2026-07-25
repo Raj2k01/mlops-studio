@@ -25,6 +25,11 @@ from evaluate import (
     save_confusion_matrix,
 )
 
+from visualize import (
+    plot_confusion_matrix,
+    plot_feature_importance,
+)
+
 def build_model():
 
     model = XGBClassifier(
@@ -86,6 +91,14 @@ def main():
     y_test,
     predictions
     )
+
+    plot_confusion_matrix(
+    model,
+    X_test,
+    y_test
+    )
+
+    plot_feature_importance(model)
 
     save_model(model)
 
