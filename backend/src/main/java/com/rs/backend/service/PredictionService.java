@@ -7,9 +7,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class PredictionService {
 
-    public PredictionResponse predict(PredictionRequest request) {
+    private final PredictionClient predictionClient;
 
-        return new PredictionResponse(5, "XGBoost", "SUCCESS");
+    public PredictionService(PredictionClient predictionClient) {
+        this.predictionClient = predictionClient;
     }
 
+    public PredictionResponse predict(PredictionRequest request) {
+
+        int prediction = predictionClient.predict(request);
+        return new PredictionResponse(prediction, "XGBoost", "SUCCESS");
+    }
 }
