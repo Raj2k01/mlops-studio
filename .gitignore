@@ -27,3 +27,16 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Python virtual environment
+ml/.venv/
+
+
+# Generated model artifacts
+ml/models/*.pkl
+
+# Generated outputs
+ml/outputs/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
