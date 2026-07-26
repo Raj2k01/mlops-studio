@@ -53,7 +53,6 @@ public class PythonPredictionClient implements PredictionClient {
 
             // Read prediction_output.json
             JsonNode node = mapper.readTree(new File(OUTPUT_FILE));
-
             return node.get("prediction").asInt();
 
         } catch (IOException | InterruptedException e) {
