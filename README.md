@@ -16,6 +16,6 @@ An end-to-end Machine Learning platform built using:
 - [x] Project Initialization
 - [x] Local ML Pipeline
 - [ ] AWS Integration
-- [ ] Backend APIs
+- [x] Backend APIs
 - [ ] Frontend Dashboard
 - [ ] Monitoring
