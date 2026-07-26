@@ -20,7 +20,9 @@ def load_input():
 
 def predict(model, input_data):
 
-    input_df = pd.DataFrame([input_data])
+    mapped_input = map_input(input_data)
+
+    input_df = pd.DataFrame([mapped_input])
 
     prediction = model.predict(input_df)
 
@@ -48,6 +50,22 @@ def main():
     save_output(prediction)
 
     print(f"Prediction saved to {OUTPUT_FILE}")
+
+def map_input(input_data):
+
+    return {
+        "fixed acidity": input_data["fixedAcidity"],
+        "volatile acidity": input_data["volatileAcidity"],
+        "citric acid": input_data["citricAcid"],
+        "residual sugar": input_data["residualSugar"],
+        "chlorides": input_data["chlorides"],
+        "free sulfur dioxide": input_data["freeSulfurDioxide"],
+        "total sulfur dioxide": input_data["totalSulfurDioxide"],
+        "density": input_data["density"],
+        "pH": input_data["pH"],
+        "sulphates": input_data["sulphates"],
+        "alcohol": input_data["alcohol"]
+    }
 
 
 if __name__ == "__main__":
