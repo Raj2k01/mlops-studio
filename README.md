@@ -21,7 +21,7 @@ An end-to-end Machine Learning platform built using:
 - [ ] Monitoring
 
 
-## Project Roadmap
+## Project Current Status
 
 Version 1.0 - Prototype
 
@@ -33,11 +33,8 @@ Version 1.0 - Prototype
 
 ## Roadmap
 
--v1.0.0  Initial working prototype
-         - React + Spring Boot + Python + XGBoost
+-v 1.0. - Initial working prototype -> React + Spring Boot + Python + XGBoost
 
--v1.5.0  UI improvements
-         - Loading, validation, better result cards
+-v 1.1 - updated UI, form validation
 
--v2.0.0  AWS Production Edition
-         - SageMaker + S3 + CloudWatch and more
+-v 2.0. - AWS Production Edition -> SageMaker + S3 + CloudWatch and more
