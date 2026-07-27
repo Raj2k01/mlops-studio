@@ -38,3 +38,9 @@ Version 1.0 - Prototype
 -v 1.1 - updated UI, form validation
 
 -v 2.0. - AWS Production Edition -> SageMaker + S3 + CloudWatch and more
+
+
+pending 
+
+Documented LocalML outputs (V 1.1)
+
